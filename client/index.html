@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/ImageGenX.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" size="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="imgae/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta property="og:title" content="ImageGenX" />
+    <meta
+          property="og:description"
+          content="Generate AI Image using your descriptions"
+        />
+        <meta property="og:site_name" content="ImageGenX" />
+        <meta property="og:url" content="https://ImageGenX.vercel.app" key="ogurl" />
+        <meta property="og:image" content='https://imagegenx.vercel.app/assets/img/ImageGenX_OG.png' />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@TheBuddyzTeam" />
+        <meta name="twitter:title" content="ImageGenX" />
+        <meta
+          name="twitter:description"
+          content="Generate AI Image using your descriptions"
+        />
+        <meta name="twitter:domain" content='https://ImageGenX.vercel.app' /> 
+        <meta name="twitter:image" content="https://imagegenx.vercel.app/assets/img/ImageGenX_OG.png" />
+        <meta name="twitter:image:alt" content="ImageGenX"/>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <title>ImageGenX - Generate AI images using your descriptions</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("./serviceWorker.js")
+            .then((registration) => {
+              console.log(
+                "Service Worker registration sucessful with scope: ",
+                registration.scope
+              );
+            })
+            .catch((err) => {
+              console.log("Service Worker registration failed: ", err);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
